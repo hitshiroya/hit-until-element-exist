@@ -19,20 +19,20 @@ Cypress.Commands.add('hitUntilElementExist', (selector, options = {}) => { ... }
 - A **Cypress.Chainable<JQuery>** that wraps the found element, allowing you to interact with it after it has been located.
 
 
-## How It Works:
+**How It Works**:
 
-- **`timeout`**: The function will keep checking for the element until the specified timeout is reached. By default, it will wait for 60 seconds.
-- **`interval`**: This defines how often the command will check for the element (in milliseconds). The default is every 1000ms (1 second).
+ **`timeout`**: The function will keep checking for the element until the specified timeout is reached. By default, it will wait for 60 seconds.
+ **`interval`**: This defines how often the command will check for the element (in milliseconds). The default is every 1000ms (1 second).
 - The function uses `document.querySelector()` to check for the element. If the element is not found, it logs a message and waits for the specified interval before retrying.
 - If the element is found, the command returns the element wrapped in Cypress commands, so you can chain further assertions or interactions.
 
-## Why Use This Command:
+**Why Use This Command**:
 
 - **Handling Dynamic Content**: Useful in situations where elements might take some time to load due to async processes (e.g., API calls, animations, etc.).
 - **Customizable Retries**: You can easily adjust the retry interval and timeout based on your needs.
 - **Robust and Configurable**: Works with any element on the page, allowing you to add specific waiting logic for dynamic pages.
 
-## Example Usage:
+**Example Usage**:
 
 ```javascript
 // Wait for an element with selector '#my-element' to appear in the DOM, 
